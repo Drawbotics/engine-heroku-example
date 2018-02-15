@@ -3,9 +3,9 @@
   "origins": [
     {
       "http": {
-        "url": "https://yourappname.herokuapp.com/graphql",
+        "url": "https://${DEFAULT_HOST}/${GRAPHQL_PATH}",
         "overrideRequestHeaders": {
-          "Host": "yourappname.herokuapp.com"
+          "Host": "${DEFAULT_HOST}"
         }
       }
     }
@@ -14,7 +14,7 @@
     {
       "host": "0.0.0.0",
       "port": ${PORT},
-      "endpoint": "/graphql"
+      "endpoint": "/${GRAPHQL_PATH}"
     }
   ],
   "stores": [
@@ -34,6 +34,6 @@
     "privateFullQueryStore": "embeddedCache"
   },
   "logging": {
-    "level": "DEBUG"
+    "level": "${APOLLO_LOG_LEVEL}"
   }
 }
